@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import TodoList from "../components/TodoList";
 import { TodoType } from "../types/todo";
 import Axios from "axios";
+import { getTodosAPI } from "../lib/api/todo";
 
 //* todos 예시 파일 작성
 const todos: TodoType[] =[
@@ -21,8 +22,8 @@ const app: NextPage = () => {
 
 export const getServerSideProps = async () => {
     try {
-        const res = await Axios.get("http://localhost:3000/api/todos");
-        console.log(res);
+        const {data} = await getTodosAPI();
+        console.log(data);
         return {props: {} };
     }   catch (e) {
         console.log(e);
