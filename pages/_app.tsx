@@ -1,5 +1,5 @@
 import {AppProps} from 'next/app';
-import { Header } from 'next/dist/lib/load-custom-routes';
+import Header from '../components/Header';
 import GlobalStyle from '../styles/GlobalStyle';
 
 

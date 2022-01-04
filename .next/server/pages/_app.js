@@ -5,95 +5,105 @@ exports.id = 888;
 exports.ids = [888];
 exports.modules = {
 
-/***/ 29:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ 728:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(689);
+// EXTERNAL MODULE: external "styled-components"
+var external_styled_components_ = __webpack_require__(518);
+var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: ./styles/palette.ts
+var palette = __webpack_require__(760);
+;// CONCATENATED MODULE: ./components/Header.tsx
 
 
-Object.defineProperty(exports, "__esModule", ({
-    value: true
-}));
-Object.defineProperty(exports, "AppInitialProps", ({
-    enumerable: true,
-    get: function() {
-        return _utils.AppInitialProps;
+
+
+const Container = (external_styled_components_default()).div`
+    display: flex;
+    align-items: center;
+    width: 100%auto;
+    height: 52px;
+    padding: 0 12px;
+    border-bottom: 1px solid ${palette/* default.gray */.Z.gray};
+    h1 {
+        font-size: 21px;
     }
-}));
-Object.defineProperty(exports, "NextWebVitalsMetric", ({
-    enumerable: true,
-    get: function() {
-        return _utils.NextWebVitalsMetric;
+`;
+const Header_Header = ()=>{
+    return(/*#__PURE__*/ _jsx(Container, {
+        children: /*#__PURE__*/ _jsx("h1", {
+            children: "정영찬의 TodoList"
+        })
+    }));
+};
+/* harmony default export */ const components_Header = ((/* unused pure expression or super */ null && (Header_Header)));
+
+;// CONCATENATED MODULE: external "styled-reset"
+const external_styled_reset_namespaceObject = require("styled-reset");
+var external_styled_reset_default = /*#__PURE__*/__webpack_require__.n(external_styled_reset_namespaceObject);
+;// CONCATENATED MODULE: ./styles/GlobalStyle.ts
+
+
+const globalStyle = external_styled_components_.css`
+    ${(external_styled_reset_default())};
+    * {
+        box-sizing: border-box;
     }
-}));
-exports["default"] = void 0;
-var _react = _interopRequireDefault(__webpack_require__(689));
-var _utils = __webpack_require__(232);
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-    try {
-        var info = gen[key](arg);
-        var value = info.value;
-    } catch (error) {
-        reject(error);
-        return;
+    body{
+        font-family: Noto Sans, Noto Sans KR;
     }
-    if (info.done) {
-        resolve(value);
-    } else {
-        Promise.resolve(value).then(_next, _throw);
-    }
-}
-function _asyncToGenerator(fn) {
-    return function() {
-        var self = this, args = arguments;
-        return new Promise(function(resolve, reject) {
-            var gen = fn.apply(self, args);
-            function _next(value) {
-                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-            }
-            function _throw(err) {
-                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-            }
-            _next(undefined);
-        });
-    };
-}
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-function _appGetInitialProps() {
-    _appGetInitialProps = /**
- * `App` component is used for initialize of pages. It allows for overwriting and full control of the `page` initialization.
- * This allows for keeping state between navigation, custom error handling, injecting additional data.
- */ _asyncToGenerator(function*({ Component , ctx  }) {
-        const pageProps = yield (0, _utils).loadGetInitialProps(Component, ctx);
-        return {
-            pageProps
-        };
-    });
-    return _appGetInitialProps.apply(this, arguments);
-}
-function appGetInitialProps(_) {
-    return _appGetInitialProps.apply(this, arguments);
-}
-class App extends _react.default.Component {
-    render() {
-        const { Component , pageProps  } = this.props;
-        return(/*#__PURE__*/ _react.default.createElement(Component, Object.assign({
-        }, pageProps)));
-    }
-}
-App.origGetInitialProps = appGetInitialProps;
-App.getInitialProps = appGetInitialProps;
-exports["default"] = App; //# sourceMappingURL=_app.js.map
+`;
+const GlobalStyle_GlobalStyle = external_styled_components_.createGlobalStyle`
+    ${globalStyle}
+`;
+/* harmony default export */ const styles_GlobalStyle = ((/* unused pure expression or super */ null && (GlobalStyle_GlobalStyle)));
+
+;// CONCATENATED MODULE: ./pages/_app.tsx
+
+
+
+const app = ({ Component , pageProps  })=>{
+    return(/*#__PURE__*/ _jsxs(_Fragment, {
+        children: [
+            /*#__PURE__*/ _jsx(GlobalStyle, {
+            }),
+            /*#__PURE__*/ _jsx(Header, {
+            }),
+            /*#__PURE__*/ _jsx(Component, {
+                ...pageProps
+            })
+        ]
+    }));
+};
 
 
 /***/ }),
 
-/***/ 232:
-/***/ ((module) => {
+/***/ 760:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-module.exports = require("next/dist/shared/lib/utils.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    red: "#FFAFBO",
+    orange: "#FFC282",
+    yellow: "#FCFFB0",
+    green: "#E2FFAF",
+    blue: "#AEE4FF",
+    navy: "#B5C7ED",
+    gray: "#E5E5E5",
+    deep_red: "#F3456",
+    deep_green: "#47E774"
+});
+
 
 /***/ }),
 
@@ -101,6 +111,20 @@ module.exports = require("next/dist/shared/lib/utils.js");
 /***/ ((module) => {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ 997:
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ 518:
+/***/ ((module) => {
+
+module.exports = require("styled-components");
 
 /***/ })
 
@@ -111,7 +135,7 @@ module.exports = require("react");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(29));
+var __webpack_exports__ = (__webpack_exec__(728));
 module.exports = __webpack_exports__;
 
 })();
