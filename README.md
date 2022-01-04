@@ -16,7 +16,7 @@ types - 투두 아이템들의 속성들을 타입으로 만들어서 사용
 
 
 *오류 발생 
-svg를 이용하여 체크 아이콘과 삭제아이콘을 구현 하려 했으나, svg 이미지 추가에 오류 발생 Cannot read properties of undefined (reading 'uid')
+svg를 이용하여 체크 아이콘과 삭제아이콘을 구현 하려 했으나, svg 이미지 추가에 오류 발생: Cannot read properties of undefined (reading 'uid')
 오류 해결에 실패하고 다음으로 넘어감
 
 5시간 초과로 인해 코딩 종료
