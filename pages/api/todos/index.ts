@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse} from "next" ;
-import { TodoType } from "../../types/todo";
+import { TodoType } from "../../../types/todo";
 export default( req: NextApiRequest, res: NextApiResponse) => {
     var fs = require('fs');
    if (req.method ==="GET") {
