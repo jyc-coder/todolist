@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { TodoType } from "../types/todo";
 import palette from "../styles/palette";
+import { useMemo } from "react";
 
 const Container = styled.div`
     width: 100%;
@@ -25,6 +26,25 @@ interface IProps {
 }
 
 const TodoList: React.FC<IProps> = ({todos}) => {
+    //*객체의 문자열 인덱스 사용을 위한 타입
+    type ObjectIndexType = {
+        [key: string]: number | undefined;
+    }
+    //* 색깔 객체 구하기 
+    const todoColorNums = useMemo(() => {
+        const colors: ObjectIndexType = {};
+        todos.forEach((todo) => {
+            const value = colors[todo.color];
+            if (!value) {
+                //*존재하지 않던 key라면
+                colors[`${todo.color}`] =1;
+            } else {
+                //*존재하는 키라면
+                colors[`${todo.color}`] = value + 1;
+            }
+        });
+        return colors;
+    },[todos]);
     return (
         <Container>
             <div className="todo-list-header">

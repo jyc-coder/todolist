@@ -11,6 +11,11 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ _app)
+});
+
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 // EXTERNAL MODULE: external "react"
@@ -36,14 +41,14 @@ const Container = (external_styled_components_default()).div`
         font-size: 21px;
     }
 `;
-const Header_Header = ()=>{
-    return(/*#__PURE__*/ _jsx(Container, {
-        children: /*#__PURE__*/ _jsx("h1", {
+const Header = ()=>{
+    return(/*#__PURE__*/ jsx_runtime_.jsx(Container, {
+        children: /*#__PURE__*/ jsx_runtime_.jsx("h1", {
             children: "정영찬의 TodoList"
         })
     }));
 };
-/* harmony default export */ const components_Header = ((/* unused pure expression or super */ null && (Header_Header)));
+/* harmony default export */ const components_Header = (Header);
 
 ;// CONCATENATED MODULE: external "styled-reset"
 const external_styled_reset_namespaceObject = require("styled-reset");
@@ -60,28 +65,29 @@ const globalStyle = external_styled_components_.css`
         font-family: Noto Sans, Noto Sans KR;
     }
 `;
-const GlobalStyle_GlobalStyle = external_styled_components_.createGlobalStyle`
+const GlobalStyle = external_styled_components_.createGlobalStyle`
     ${globalStyle}
 `;
-/* harmony default export */ const styles_GlobalStyle = ((/* unused pure expression or super */ null && (GlobalStyle_GlobalStyle)));
+/* harmony default export */ const styles_GlobalStyle = (GlobalStyle);
 
 ;// CONCATENATED MODULE: ./pages/_app.tsx
 
 
 
 const app = ({ Component , pageProps  })=>{
-    return(/*#__PURE__*/ _jsxs(_Fragment, {
+    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
-            /*#__PURE__*/ _jsx(GlobalStyle, {
+            /*#__PURE__*/ jsx_runtime_.jsx(styles_GlobalStyle, {
             }),
-            /*#__PURE__*/ _jsx(Header, {
+            /*#__PURE__*/ jsx_runtime_.jsx(components_Header, {
             }),
-            /*#__PURE__*/ _jsx(Component, {
+            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
                 ...pageProps
             })
         ]
     }));
 };
+/* harmony default export */ const _app = (app);
 
 
 /***/ }),
