@@ -2,6 +2,7 @@ import React from "react";
 import { NextPage } from "next";
 import TodoList from "../components/TodoList";
 import { TodoType } from "../types/todo";
+import Axios from "axios";
 
 //* todos 예시 파일 작성
 const todos: TodoType[] =[
@@ -17,5 +18,16 @@ const todos: TodoType[] =[
 const app: NextPage = () => {
     return <TodoList todos={todos}> </TodoList>
 }
+
+export const getServerSideProps = async () => {
+    try {
+        const res = await Axios.get("http://localhost:3000/api/todos");
+        console.log(res);
+        return {props: {} };
+    }   catch (e) {
+        console.log(e);
+        return {props: {} };
+    }
+};
 
 export default app;
