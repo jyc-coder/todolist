@@ -90,7 +90,21 @@ const Container = styled.div`
                         margin-left: 12px;;
                         font-size: 16px;
                     }
-                }    
+                }
+                /* 목록 오른쪽 구간 */   
+                .todo-right-side{
+                    display: flex;
+                    margin-right: 12px;
+
+                    .todo-button {
+                        width: 20px;
+                        height:20px;
+                        border-radius: 50%50%;
+                        border: 1px solid ${palette.gray};
+                        background-color: transparent;
+                        outline: none;
+                    }
+                } 
             }
         }
 `;
@@ -142,8 +156,18 @@ const TodoList: React.FC<IProps> = ({todos}) => {
                                 <p className={`todo-text ${
                                     todo.checked? "checked-todo-text" : ""
                                 }`}>
-                                    
+                                    {todo.text}
                                 </p>
+                            </div>
+                            <div className="todo-right-side">
+                                {/* 목록이 체크가 되어있으면 */}
+                                {!todo.checked && (
+                                    <button
+                                    type="button"
+                                    className="todo-button"
+                                    onClick={()=>{}}
+                                    ></button>
+                                )}
                             </div>
                         </li>
                     ))}
