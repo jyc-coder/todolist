@@ -12,3 +12,7 @@ const app = ({Component, pageProps} : AppProps) => {
         </>
     )
 }
+
+
+
+export default app;
