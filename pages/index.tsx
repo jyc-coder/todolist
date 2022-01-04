@@ -14,20 +14,25 @@ const todos: TodoType[] =[
     {id: 5, text: "운동하기" , color:"blue" , checked: false},
     {id: 6, text: "일찍 자기", color:"navy" , checked: false},
 ];
+//* TodoList가 props로 todos를 받을 수 있게 타입을 설정
+interface IProps {
+    todos: TodoType[];
+}
 
 
-const app: NextPage = () => {
-    return <TodoList todos={todos}> </TodoList>
+const app: NextPage<IProps> = ({todos}) => {
+    console.log(process.env, "클라이언트");
+    return <TodoList todos ={todos}> </TodoList>
 }
 
 export const getServerSideProps = async () => {
     try {
         const {data} = await getTodosAPI();
-        console.log(data);
-        return {props: {} };
+        console.log(process.env,"서버");
+        return {props: {todos: data} };
     }   catch (e) {
         console.log(e);
-        return {props: {} };
+        return {props: { todos: [] } };
     }
 };
 
