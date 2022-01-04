@@ -62,6 +62,37 @@ const Container = styled.div`
         .bg-yellow {
             background-color: ${palette.yellow};
         }    
+        /* 투두 아이템 스타일링 */
+        .todo-list{
+            .todo-item{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 52px;
+                border-bottom : 1px solid ${palette.gray};
+                /* 목록 왼쪽구간 */
+                .todo-left-side{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items:center;
+                    .todo-color-block {
+                        width: 12px;
+                        height: 100%;
+                    }
+                    /* 체크된 목록은 줄이 그어진 글씨로 표시 */
+                    .checked-todo-text {
+                        color: ${palette.gray};
+                        text-decoration: line-through;
+                    }
+                    .todo-text {
+                        margin-left: 12px;;
+                        font-size: 16px;
+                    }
+                }    
+            }
+        }
 `;
 
 //* TodoList가 props로 todos를 받을 수 있게 타입을 설정
@@ -100,9 +131,23 @@ const TodoList: React.FC<IProps> = ({todos}) => {
                         <div className="todo-list-header-color-num" key={index}>
                             <div className={`todo-list-header-round-color bg-${color}`}></div>
                             <p>{todoColorNums[color]}개</p>
-                        </div>
+                        </div>   
                     ))}
                 </div>
+                <ul className="todo-list">
+                    {todos.map((todo) => (
+                        <li className="todo-item" key={todo.id}>
+                            <div className="todo-left-side">
+                                <div className={`todo-color-block bg-${todo.color}`}></div>
+                                <p className={`todo-text ${
+                                    todo.checked? "checked-todo-text" : ""
+                                }`}>
+                                    
+                                </p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </Container>
     );
