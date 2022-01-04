@@ -1,10 +1,10 @@
-import React from "react";
+import React ,{useMemo}from "react";
 import styled from "styled-components";
 import { TodoType } from "../types/todo";
-import palette from "../styles/palette";
-import { useMemo } from "react";
 import TrashCanIcon from "../public/statics/svg/trash_can.svg";
 import CheckMarkIcon from "../public/statics/svg/check_mark.svg";
+import palette from "../styles/palette";
+
 
 const Container = styled.div`
     width: 100%;
@@ -97,7 +97,7 @@ const Container = styled.div`
                 .todo-right-side{
                     display: flex;
                     margin-right: 12px;
-                    svg{
+                    svg {
                         &:first-child {
                             margin-right:16px;
                         }
@@ -129,6 +129,7 @@ const Container = styled.div`
 interface IProps {
     todos: TodoType[];
 }
+
 
 const TodoList: React.FC<IProps> = ({todos}) => {
     //*객체의 문자열 인덱스 사용을 위한 타입
@@ -176,14 +177,16 @@ const TodoList: React.FC<IProps> = ({todos}) => {
                                 </p>
                             </div>
                             <div className="todo-right-side">
-                                {/* 목록이 체크가 되어있지않으면 */}
                                 {todo.checked && (
+                                 
                                     <>
-                                        <TrashCanIcon  className="todo-trash-can" onClick={() => {}}/>
-                                        <CheckMarkIcon className="todo-check-mark" onClick={() => {}}/>
                                     </>
-                                    
+                                  
+                                 
+                                
+
                                 )}
+                                
                                 {!todo.checked && (
                                     <button
                                     type="button"
